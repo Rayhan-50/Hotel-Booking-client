@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom"; // To navigate back to home
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
@@ -9,7 +9,7 @@ const NotFound = () => {
         <meta name="description" content="Oops! The page you are looking for does not exist. Navigate back to the home page." />
       </Helmet>
       <img
-        src="https://i.ibb.co.com/S55MLhK/3.jpg" // Replace with your exciting JPG/GIF URL
+        src="https://i.ibb.co.com/S55MLhK/3.jpg" 
         alt="404 Not Found"
         className="w-full max-w-lg mb-8"
       />
