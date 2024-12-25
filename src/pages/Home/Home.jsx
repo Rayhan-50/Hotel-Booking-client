@@ -32,6 +32,8 @@ import Map from "./Map";
 import FeaturedRooms from "./FeaturedRooms";
 import Reviews from "./Reviews";
 import { useState } from "react";
+import Amenities from "./Amenities";
+import SpecialOffers from "./SpecialOffers";
 
 const Home = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -68,8 +70,13 @@ const Home = () => {
             <Map />
             <FeaturedRooms />
             <Reviews />
+            <Amenities></Amenities>
+            <SpecialOffers></SpecialOffers>
         </div>
     );
 };
 
 export default Home;
+
+
+

@@ -37,7 +37,7 @@ const RoomDetails = () => {
  const handleAddToMyBookings = async () => {
 
   try {
-    const response = await axios.post("http://localhost:5000/myBookings", {
+    const response = await axios.post("myBookings", {
       roomId: _id,
       title: title,
       price: price,

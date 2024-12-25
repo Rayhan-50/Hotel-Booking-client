@@ -6,11 +6,12 @@ const FeaturedRooms = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/rooms")
+    fetch("https://hotel-booking-server-azure.vercel.app/rooms")
       .then((res) => res.json())
       .then((data) => {
       
         const topRooms = data.slice(0, 6);
+        
         setRooms(topRooms);
       })
       .catch((error) => console.error("Error fetching rooms:", error));

@@ -36,8 +36,8 @@ import NotFound from "../pages/NotFound/NotFound";
           },
           {
             path: '/rooms/:id',
-            element: <RoomDetails></RoomDetails>,
-            loader:({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
+            element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
+            loader:({params})=> fetch(`https://hotel-booking-client-2f049.web.app/rooms/${params.id}`)
             
             
           },
