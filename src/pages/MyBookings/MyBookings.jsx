@@ -35,6 +35,7 @@ const MyBookings = () => {
       };
 
       const response = await axios.post("http://localhost:5000/myBookings", bookingData);
+      console.log(response)
 
       if (response.status === 201) {
         alert("Booking added successfully!");
@@ -148,7 +149,7 @@ const MyBookings = () => {
           <tbody>
             {bookings.map((booking) => (
               <tr key={booking._id}>
-                <td className="border border-gray-300 px-4 py-2">{booking.roomTitle}</td>
+                <td className="border border-gray-300 px-4 py-2">{booking.title}</td>
                 <td className="border border-gray-300 px-4 py-2">{booking.price}</td>
                 <td className="border border-gray-300 px-4 py-2">
                   {new Date(booking.bookingDate).toLocaleDateString()}

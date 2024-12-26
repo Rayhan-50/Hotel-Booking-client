@@ -6,7 +6,7 @@ const FeaturedRooms = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5173/rooms")
+    fetch("http://localhost:5000/rooms")
       .then((res) => res.json())
       .then((data) => {
       
