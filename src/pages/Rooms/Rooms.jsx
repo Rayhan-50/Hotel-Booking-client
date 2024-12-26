@@ -10,7 +10,7 @@ const Rooms = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/rooms")
+    fetch("https://hotel-booking-server-azure.vercel.app/rooms")
       .then((res) => res.json())
       .then((data) => setRooms(data))
       .catch((error) => console.error("Error fetching rooms:", error));
@@ -18,7 +18,7 @@ const Rooms = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/myBookings?email=${user.email}`)
+      fetch(`https://hotel-booking-server-azure.vercel.app/myBookings?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setUserBookings(data))
         .catch((error) => console.error("Error fetching bookings:", error));

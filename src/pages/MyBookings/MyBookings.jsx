@@ -17,7 +17,7 @@ const MyBookings = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:5000/myBookings?email=${user.email}`)
+        .get(`https://hotel-booking-server-azure.vercel.app/myBookings?email=${user.email}`)
         .then((res) => setBookings(res.data))
         .catch((error) => console.error("Error fetching bookings:", error));
     }
@@ -34,7 +34,7 @@ const MyBookings = () => {
         user_email: user.email, 
       };
 
-      const response = await axios.post("http://localhost:5000/myBookings", bookingData);
+      const response = await axios.post("https://hotel-booking-server-azure.vercel.app/myBookings", bookingData);
       console.log(response)
 
       if (response.status === 201) {
@@ -52,7 +52,7 @@ const MyBookings = () => {
  
   const handleDeleteBooking = async (bookingId) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/myBookings/${bookingId}`);
+      const response = await axios.delete(`https://hotel-booking-server-azure.vercel.app/myBookings/${bookingId}`);
       
       if (response.status === 200) {
        
@@ -76,7 +76,7 @@ const MyBookings = () => {
  
   const handleReviewSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/reviews", {
+      const response = await axios.post("https://hotel-booking-server-azure.vercel.app/reviews", {
         bookingId: currentBookingId,
         userEmail: user.email,
         rating,
@@ -107,7 +107,7 @@ const MyBookings = () => {
  
   const handleUpdateSubmit = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/myBookings/${currentBookingId}`, {
+      const response = await axios.put(`https://hotel-booking-server-azure.vercel.app/myBookings/${currentBookingId}`, {
         bookingDate: newBookingDate,
       });
 

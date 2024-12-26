@@ -37,7 +37,7 @@ import NotFound from "../pages/NotFound/NotFound";
           {
             path: '/rooms/:id',
             element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
-            loader:({params})=> fetch(`http://localhost:5173//rooms/${params.id}`)
+            loader:({params})=> fetch(`https://hotel-booking-server-azure.vercel.app/rooms/${params.id}`)
             
           },
           {

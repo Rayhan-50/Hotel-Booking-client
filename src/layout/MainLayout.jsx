@@ -8,13 +8,13 @@ const MainLayout = () => {
     return (
         <div>
           <ToastContainer></ToastContainer>
-      {/* Navbar */}
+     
       <Navbar />
-      {/* Outlet */}
+     
       <div className='min-h-[calc(100vh-365px)]'>
         <Outlet />
       </div>
-      {/* Footer */}
+     
       <Footer />
     </div>
     );

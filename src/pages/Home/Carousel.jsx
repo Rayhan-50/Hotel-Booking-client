@@ -3,18 +3,14 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// Import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-// Import Slide component
 import Slide from "./Slide";
 
-// Import images
 import bgimg1 from "../../assets/images/carousel1.jpeg";
 import bgimg2 from "../../assets/images/carousel2.jpeg";
 import bgimg3 from "../../assets/images/carousel3.jpeg";

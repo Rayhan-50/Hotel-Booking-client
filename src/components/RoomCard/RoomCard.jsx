@@ -22,7 +22,7 @@ const RoomCard = ({ room, isBooked }) => {
           <p className="text-sm text-gray-500">Reviews: {reviews}</p>
         </div>
 
-        {/* Booking Button */}
+       
         {isBooked ? (
           <button className="btn w-full bg-gray-300 cursor-not-allowed" disabled>
             Unavailable

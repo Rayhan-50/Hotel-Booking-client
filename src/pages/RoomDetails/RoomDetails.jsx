@@ -29,7 +29,7 @@ const RoomDetails = () => {
 
   const handleAddToMyBookings = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/myBookings", {
+      const response = await axios.post("https://hotel-booking-server-azure.vercel.app/myBookings", {
         roomId: _id,
         title: title,
         price: price,
