@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/booking-logo.png';
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -10,12 +11,13 @@ const Navbar = () => {
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
-        console.log("successful sign out");
+        toast.success("Successfully signed out!");
       })
       .catch((error) => {
-        console.log("failed to sign out", error);
+        toast.error("Failed to sign out. Please try again.");
       });
   };
+
 
   const links = (
     <>

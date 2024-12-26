@@ -2,7 +2,6 @@
 
 const ReviewCard = ({ review }) => {
     const { bookingId, userEmail, rating, comment, _id } = review;
-
     return (
         <div className="border p-4 rounded shadow-md mb-4">
             <h2 className="text-lg font-bold text-center mb-2">Review</h2>
@@ -13,5 +12,4 @@ const ReviewCard = ({ review }) => {
         </div>
     );
 };
-
 export default ReviewCard;

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
+
 import ReviewCard from "../../components/ReviewCard/ReviewCard";
 
 const Reviews = () => {
   const [reviews, setRevews] = useState([]);
 
   useEffect(() => {
-    fetch("https://hotel-booking-server-azure.vercel.app/reviews")
+    fetch("http://localhost:5173/reviews")
       .then((res) => res.json())
       .then((data) => {
       
