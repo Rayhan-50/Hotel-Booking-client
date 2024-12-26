@@ -101,8 +101,7 @@ https://hotel-booking-client-2f049.web.app/
 4. Start the development servers:
    ```bash
    cd client
-   npm run dev
-
+   npm run dev   
    cd server
    npm start
    ```
