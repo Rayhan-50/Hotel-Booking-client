@@ -106,7 +106,7 @@ https://hotel-booking-client-2f049.web.app/
    cd server
    npm start
    ```
-5. Visit the application at `https://hotel-booking-client-2f049.web.app/`.
+5. Visit the application at `https://hotel-booking-client-2f049.web.app/`......
 
 ---
 
