@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import axios from "axios";
-
+import Swal from "sweetalert2";
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -35,10 +35,9 @@ const MyBookings = () => {
       };
 
       const response = await axios.post("https://hotel-booking-server-azure.vercel.app/myBookings", bookingData);
-      console.log(response)
-
+    
       if (response.status === 201) {
-        alert("Booking added successfully!");
+        Swal.fire("Success!", "Booking added successfully!", "success");
         setBookings((prev) => [...prev, bookingData]); 
       } else {
         alert("Failed to add booking.");
@@ -57,13 +56,13 @@ const MyBookings = () => {
       if (response.status === 200) {
        
         setBookings((prev) => prev.filter((booking) => booking._id !== bookingId));
-        alert("Booking deleted successfully!");
+        Swal.fire("Deleted!", "Booking deleted successfully!", "success");
       } else {
-        alert("Failed to delete booking.");
+        Swal.fire("Error!", "Failed to delete booking.", "error");
       }
     } catch (error) {
       console.error("Error deleting booking:", error);
-      alert("An error occurred while deleting the booking. Please try again.");
+      Swal.fire("Error!", "An error occurred while deleting the booking. Please try again.", "error");
     }
   };
 
@@ -84,16 +83,16 @@ const MyBookings = () => {
       });
 
       if (response.status === 201) {
-        alert("Review submitted successfully!");
+        Swal.fire("Success!", "Review submitted successfully!", "success")
         setModalVisible(false);
         setRating(1);
         setComment("");
       } else {
-        alert("Failed to submit review. Please try again.");
+        Swal.fire("Error!", "Failed to submit review. Please try again.", "error");
       }
     } catch (error) {
       console.error("Error submitting review:", error);
-      alert("An error occurred. Please try again.");
+      Swal.fire("Error!", "Failed to submit review. Please try again.", "error");
     }
   };
 
@@ -112,7 +111,7 @@ const MyBookings = () => {
       });
 
       if (response.status === 200) {
-        alert("Booking date updated successfully!");
+        Swal.fire("Success!", "Booking date updated successfully!", "success");
        
         setBookings((prev) =>
           prev.map((booking) =>
@@ -122,11 +121,11 @@ const MyBookings = () => {
         setUpdateModalVisible(false);
         setNewBookingDate("");
       } else {
-        alert("Failed to update booking date.");
+        Swal.fire("Error!", "Failed to update booking date.", "error");
       }
     } catch (error) {
       console.error("Error updating booking date:", error);
-      alert("An error occurred. Please try again.");
+      Swal.fire("Error!", "An error occurred. Please try again.", "error");
     }
   };
 
@@ -162,7 +161,7 @@ const MyBookings = () => {
                     Give Review
                   </button>
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
+                <td className="border border-gray-300 px-4 py-2 gap-5">
                   <button
                     onClick={() => handleUpdateClick(booking._id, booking.bookingDate)}
                     className="bg-blue-500 text-white px-4 py-2 rounded"
@@ -248,7 +247,7 @@ const MyBookings = () => {
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-end ">
               <button
                 onClick={handleUpdateSubmit}
                 className="bg-blue-500 text-white px-4 py-2 rounded mr-2"

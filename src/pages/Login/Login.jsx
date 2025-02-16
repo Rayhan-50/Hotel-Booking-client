@@ -61,7 +61,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero  min-h-screen">
       <Helmet>
         <title>Login | Hotel Booking</title>
         <meta
@@ -74,12 +74,12 @@ const Login = () => {
         />
         <meta name="author" content="Hotel Booking Team" />
       </Helmet>
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left w-96">
+      <div className="hero-content flex-col lg:flex-row-reverse ">
+        <div className="text-center lg:text-left w-96 ">
           <Lottie animationData={loginLottieJSON}></Lottie>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
-          <h1 className="text-5xl font-bold ml-8 mt-4">Sign In!</h1>
+        <div className="">
+          <h1 className="text-5xl font-bold ml-8 mt-4">Log In!</h1>
           <form onSubmit={handleSignIn} className="card-body">
             <div className="form-control">
               <label className="label">
