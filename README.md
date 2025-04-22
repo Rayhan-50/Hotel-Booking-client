@@ -87,5 +87,4 @@ The **Hotel Booking Platform** is a full-stack web application designed to provi
 ### 1. Clone the Repositories
 
 
-git clone <client-repo-url>
-git clone <server-repo-url>
+git clone https://github.com/Rayhan-50/Hotel-Booking-client.git
