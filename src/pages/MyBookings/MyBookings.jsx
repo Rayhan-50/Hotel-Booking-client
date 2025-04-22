@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -49,23 +50,38 @@ const MyBookings = () => {
   };
 
  
+  // const handleDeleteBooking = async (bookingId) => {
+  //   try {
+  //     const response = await axios.delete(`https://hotel-booking-server-azure.vercel.app/myBookings/${bookingId}`);
+      
+  //     if (response.status === 200) {
+       
+  //       setBookings((prev) => prev.filter((booking) => booking._id !== bookingId));
+  //       Swal.fire("Deleted!", "Booking deleted successfully!", "success");
+  //     } else {
+  //       Swal.fire("Error!", "Failed to delete booking.", "error");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error deleting booking:", error);
+  //     Swal.fire("Error!", "An error occurred while deleting the booking. Please try again.", "error");
+  //   }
+  // };
+
+
   const handleDeleteBooking = async (bookingId) => {
     try {
       const response = await axios.delete(`https://hotel-booking-server-azure.vercel.app/myBookings/${bookingId}`);
-      
       if (response.status === 200) {
-       
         setBookings((prev) => prev.filter((booking) => booking._id !== bookingId));
-        Swal.fire("Deleted!", "Booking deleted successfully!", "success");
+        toast.success("Booking deleted successfully!");
       } else {
-        Swal.fire("Error!", "Failed to delete booking.", "error");
+        toast.error("Failed to delete booking.");
       }
     } catch (error) {
       console.error("Error deleting booking:", error);
-      Swal.fire("Error!", "An error occurred while deleting the booking. Please try again.", "error");
+      toast.error("An error occurred while deleting the booking.");
     }
   };
-
   
   const handleReviewClick = (bookingId) => {
     setCurrentBookingId(bookingId);

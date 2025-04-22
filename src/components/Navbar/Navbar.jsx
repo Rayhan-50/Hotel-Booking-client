@@ -192,9 +192,23 @@ const Navbar = () => {
               : "text-gray-200 hover:text-yellow-400 transition text-sm sm:text-base"
           }
         >
-          My Booking
+          My Bookings
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 border-b-2 border-yellow-400 text-sm sm:text-base"
+                : "text-gray-200 hover:text-yellow-400 transition text-sm sm:text-base"
+            }
+          >
+            Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -203,7 +217,10 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="flex items-center gap-4">
           <div className="dropdown lg:hidden">
-            <button className="text-white focus:outline-none">
+            <button
+              className="text-white focus:outline-none"
+              aria-label="Toggle mobile menu"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -225,7 +242,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Logo" className="h-8 sm:h-10" />
+            <img src={logo} alt="Hotel Booking Logo" className="h-8 sm:h-10" />
             <h3 className="text-white text-lg sm:text-xl font-bold">Hotel Booking</h3>
           </Link>
         </div>
@@ -241,7 +258,7 @@ const Navbar = () => {
                 {user.photoURL && (
                   <img
                     src={user.photoURL}
-                    alt="User Avatar"
+                    alt={`${user.displayName || "User"}'s avatar`}
                     className="w-8 sm:w-10 h-8 sm:h-10 rounded-full border-2 border-white"
                   />
                 )}
@@ -252,13 +269,17 @@ const Navbar = () => {
               <button
                 onClick={handleSignOut}
                 className="bg-yellow-400 text-blue-900 px-3 sm:px-4 py-1 sm:py-2 rounded-md font-medium hover:bg-yellow-300 transition text-sm sm:text-base"
+                aria-label="Sign out"
               >
                 Log Out
               </button>
             </div>
           ) : (
             <NavLink to="/login">
-              <button className="bg-white text-blue-900 px-3 sm:px-4 py-1 sm:py-2 rounded-md font-medium hover:bg-gray-100 transition text-sm sm:text-base">
+              <button
+                className="bg-white text-blue-900 px-3 sm:px-4 py-1 sm:py-2 rounded-md font-medium hover:bg-gray-100 transition text-sm sm:text-base"
+                aria-label="Sign in"
+              >
                 Sign in
               </button>
             </NavLink>

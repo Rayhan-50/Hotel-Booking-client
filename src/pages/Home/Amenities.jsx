@@ -23,32 +23,17 @@ const Amenities = () => {
       {/* Amenities Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto">
         {amenities.map((amenity, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="p-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center"
-          >
-            {/* Icon */}
-            <div className="w-20 h-20 flex items-center justify-center mb-4">
-              <img
-                src={amenity.icon}
-                alt={amenity.title}
-                className="w-16 h-16 object-contain rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-md"
-              />
-            </div>
-
-            {/* Title */}
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
-              {amenity.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-600 dark:text-gray-300">{amenity.description}</p>
-          </motion.div>
+        <motion.div
+        className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center min-h-[250px]"
+      >
+        <img
+          src={amenity.icon}
+          alt={`Icon for ${amenity.title}`} // Add alt text
+          className="w-16 h-16 object-contain rounded-full border-2 border-blue-500 dark:border-yellow-400 shadow-md"
+        />
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">{amenity.title}</h3>
+        <p className="text-gray-600 dark:text-gray-300">{amenity.description}</p>
+      </motion.div>
         ))}
       </div>
     </section>

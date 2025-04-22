@@ -91,18 +91,30 @@
 
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (email) {
+      toast.success("Subscribed to newsletter!");
+      setEmail("");
+    } else {
+      toast.error("Please enter a valid email.");
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-        
         {/* About Us */}
         <div>
           <h3 className="text-2xl font-semibold mb-4 text-yellow-400">About Us</h3>
           <p className="text-gray-200">
-            Discover the best hotel booking experience with us. Enjoy luxury, comfort, 
-            and seamless reservations at your fingertips.
+            Discover the best hotel booking experience with us. Enjoy luxury, comfort, and seamless reservations.
           </p>
         </div>
 
@@ -125,23 +137,45 @@ const Footer = () => {
                 My Bookings
               </Link>
             </li>
-            
+            <li>
+              <Link to="/profile" className="hover:text-yellow-400 transition">
+                Profile
+              </Link>
+            </li>
           </ul>
         </div>
 
-        {/* Contact & Social Media */}
+        {/* Contact & Newsletter */}
         <div>
-          <h3 className="text-2xl font-semibold mb-4 text-yellow-400">Contact Us</h3>
+          <h3 className="text-2xl font-semibold mb-4 text-yellow-400">Stay Connected</h3>
           <p className="text-gray-200">📧 support@hotelbooking.com</p>
           <p className="text-gray-200">📞 +123 456 7890</p>
           <p className="text-gray-200">📍 123 Main Street, City, Country</p>
-          
+          <form onSubmit={handleNewsletterSubmit} className="mt-4">
+            <div className="flex gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-1 p-2 rounded-md text-black dark:text-white dark:bg-gray-700"
+                aria-label="Email for newsletter"
+              />
+              <button
+                type="submit"
+                className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-md hover:bg-yellow-300 transition"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
           <div className="flex space-x-4 mt-4">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition"
+              aria-label="Visit our Facebook page"
             >
               <FaFacebook size={28} />
             </a>
@@ -150,6 +184,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-300 transition"
+              aria-label="Visit our Twitter page"
             >
               <FaTwitter size={28} />
             </a>
@@ -158,6 +193,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-400 transition"
+              aria-label="Visit our Instagram page"
             >
               <FaInstagram size={28} />
             </a>
@@ -165,9 +201,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Section */}
       <div className="mt-8 border-t border-gray-600 pt-4 text-center">
-        <p className="text-gray-300">&copy; {new Date().getFullYear()} Hotel Booking Platform. All rights reserved.</p>
+        <p className="text-gray-300">
+          © {new Date().getFullYear()} Hotel Booking Platform. All rights reserved.
+        </p>
       </div>
     </footer>
   );

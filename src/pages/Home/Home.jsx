@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Carousel from "./Carousel";
@@ -13,6 +8,8 @@ import FeaturedRooms from "./FeaturedRooms";
 import Reviews from "./Reviews";
 import Amenities from "./Amenities";
 import SpecialOffers from "./SpecialOffers";
+
+import NewsletterSection from "./NewsletterSection";
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(
@@ -43,12 +40,12 @@ const Home = () => {
 
       {/* Dark Mode Toggle Button */}
       <div className="fixed top-20 right-4 z-50">
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="btn btn-outline btn-sm dark:bg-gray-200 dark:text-black transition "
-        >
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
+      <button
+  onClick={() => setDarkMode(!darkMode)}
+  className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition"
+>
+  {darkMode ? "Light Mode" : "Dark Mode"}
+</button>
       </div>
 
       <div>
@@ -58,6 +55,7 @@ const Home = () => {
         <Reviews />
         <Amenities />
         <SpecialOffers />
+        <NewsletterSection></NewsletterSection>
       </div>
     </div>
   );
