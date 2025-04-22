@@ -12,6 +12,7 @@ import Register from "../pages/Register/Register";
 import RoomDetails from "../pages/RoomDetails/RoomDetails";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound/NotFound";
+import Profile from "../pages/Profile/Profile";
 
   const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ import NotFound from "../pages/NotFound/NotFound";
           {
             path: '/register',
             element: <Register></Register>,
+          },
+          {
+            path: '/profile',
+            element: <Profile></Profile>,
           },
       ]
     },
