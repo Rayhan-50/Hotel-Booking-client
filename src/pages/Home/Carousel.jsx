@@ -1,6 +1,3 @@
-
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -18,27 +15,27 @@ import bgimg3 from "../../assets/images/carousel3.jpeg";
 export default function Carousel() {
   const slides = [
     {
-        image: bgimg1,
-        title: "Welcome to Your Dream Stay",
-        description: "Discover luxurious rooms tailored for comfort and relaxation.",
-        buttonText: "Explore Rooms",
-        link: "/rooms",
-      },
-      {
-        image: bgimg2,
-        title: "Experience Unmatched Comfort",
-        description: "Indulge in the finest amenities and serene surroundings.",
-        buttonText: "View Rooms",
-        link: "/rooms",
-      },
-      {
-        image: bgimg3,
-        title: "Find Your Perfect Escape",
-        description: "Book your stay and enjoy an unforgettable experience.",
-        buttonText: "Book Now",
-        link: "/rooms",
-      },
-      
+      image: bgimg1,
+      title: "Welcome to Your Dream Stay",
+      description:
+        "Discover luxurious rooms tailored for comfort and relaxation.",
+      buttonText: "Explore Rooms",
+      link: "/rooms",
+    },
+    {
+      image: bgimg2,
+      title: "Experience Unmatched Comfort",
+      description: "Indulge in the finest amenities and serene surroundings.",
+      buttonText: "View Rooms",
+      link: "/rooms",
+    },
+    {
+      image: bgimg3,
+      title: "Find Your Perfect Escape",
+      description: "Book your stay and enjoy an unforgettable experience.",
+      buttonText: "Book Now",
+      link: "/rooms",
+    },
   ];
 
   return (
@@ -66,6 +63,7 @@ export default function Carousel() {
               description={slide.description}
               buttonText={slide.buttonText}
               link={slide.link}
+              alt={`Slide ${index + 1} for ${slide.title}`} // Add alt prop
             />
           </SwiperSlide>
         ))}

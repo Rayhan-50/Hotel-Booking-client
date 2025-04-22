@@ -1,6 +1,3 @@
-
-
-
 import { FaTags, FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -40,14 +37,16 @@ const SpecialOffers = () => {
             <h3 className="text-2xl font-bold text-blue-600 dark:text-yellow-400 mb-3">
               {offer.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{offer.description}</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              {offer.description}
+            </p>
 
             <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400 text-sm mb-4">
               <FaCalendarAlt className="text-blue-500 dark:text-yellow-300" />
               <span>{offer.validity}</span>
             </div>
             <Link to="/rooms">
-              <button className="mt-4 bg-blue-600 dark:bg-yellow-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-700 dark:hover:bg-yellow-600 transition-all">
+              <button className="mt-4 bg-blue-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-600 transition-all">
                 Book Now
               </button>
             </Link>
