@@ -23,7 +23,7 @@ const SpecialOffers = () => {
   ];
 
   return (
-    <section className="lg:px-28 py-16 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 text-center transition-all duration-500">
+    <section className=" py-16 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 text-center transition-all duration-500">
       <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-10 flex justify-center items-center gap-2">
         <FaTags className="text-blue-600 dark:text-yellow-400" /> Special Offers
       </h2>

@@ -16,7 +16,7 @@ const Amenities = () => {
   ];
 
   return (
-    <section className="lg:px-28 py-10 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-center">
+    <section className=" py-10 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-center">
       {/* Title */}
       <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-10">Our Amenities</h2>
 
